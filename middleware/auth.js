@@ -3,12 +3,10 @@ const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
 const authenticationMiddleware = (req, res, next) => {
-  console.log("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
   const authHeader = req.headers.authorization;
   if (!authHeader || !authHeader.startsWith("Bearer")) {
     throw new unauthorisedAPI("No token provided");
   }
-  console.log("jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj");
 
   const token = authHeader.split(" ")[1];
 
